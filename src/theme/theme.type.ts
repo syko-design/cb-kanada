@@ -8,6 +8,7 @@ export interface Theme {
 		light200: string
 		dark100: string
 		dark200: string
+		shadow100: string
 	}
 	fontSize: {
 		small: string

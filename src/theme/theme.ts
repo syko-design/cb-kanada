@@ -9,7 +9,8 @@ export const theme: Theme = {
 		light100: '#fff',
 		light200: '#fafafa',
 		dark100: '#222222',
-		dark200: '#777777'
+		dark200: '#777777',
+		shadow100: '#22222222'
 	},
 	fontSize: {
 		small: '12px',

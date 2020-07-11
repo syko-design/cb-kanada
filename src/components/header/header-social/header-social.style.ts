@@ -10,8 +10,8 @@ export const HeaderSocialContainer = styled.section`
 export const HeaderSocialWrapper = styled.section`
 	display: flex;
 	justify-content: space-between;
-	padding: 10px;
-	max-width: 1200px;
+	padding: 10px 0;
+	width: 1200px;
 	margin: auto;
 `
 
@@ -23,9 +23,9 @@ export const HeaderContactSection = styled.section`
 
 export const ContactText = styled.p`
 	margin: 0 10px;
-	font-size: 12px;
-	font-weight: 300;
 	${({ theme }: ThemeProps) => css`
+		font-weight: ${theme.fontWeight.light};
+		font-size: ${theme.fontSize.small};
 		color: ${theme.colors.light100};
 	`}
 `
