@@ -1,5 +1,5 @@
-import { createGlobalStyle, css } from "styled-components";
-import { ThemeProps } from "./theme.type";
+import { createGlobalStyle, css } from 'styled-components'
+import { ThemeProps } from './theme.type'
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -9,18 +9,17 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
         ${({ theme }: ThemeProps) => css`
-            ::selection {
-                background: ${theme.primary100};
-            }
-        `}
+					::selection {
+						background: ${theme.primary100};
+					}
+				`}
     }
 
-    body: {
+    body {
         font-size: 14px;
-        font-family: sans-serif;
         ${({ theme }: ThemeProps) => css`
-            color: ${theme.dark100};
-        `}
+					color: ${theme.dark100};
+				`}
     }
 
 `
