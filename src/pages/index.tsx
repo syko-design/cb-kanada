@@ -9,12 +9,15 @@ import { aboutProps } from '../input/about.props'
 import { Contact } from '../components/contact/contact'
 import { contactProps } from '../input/contact.props'
 import { Hero } from 'components/hero/hero'
+import { HeroOffer } from 'components/hero-offer/hero-offer/hero-offer'
+import { heroOfferProps } from 'input/hero-offer.props'
 
 const IndexPage: React.FC = () => (
 	<Layout>
 		<SEO title="Home" />
 		<Header header={headerProps} />
 		<Hero />
+		<HeroOffer heroOffer={heroOfferProps} />
 		<About about={aboutProps} />
 		<Contact contact={contactProps} />
 	</Layout>
