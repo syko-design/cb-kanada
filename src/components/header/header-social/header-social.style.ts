@@ -5,13 +5,18 @@ export const HeaderSocialContainer = styled.section`
 	${({ theme }: ThemeProps) => css`
 		background-color: ${theme.colors.dark100};
 	`}
+
+	@media screen and (max-width: 1024px) {
+		display: none;
+	}
 `
 
 export const HeaderSocialWrapper = styled.section`
 	display: flex;
 	justify-content: space-between;
 	padding: 10px 0;
-	width: 1200px;
+	width: 90%;
+	max-width: 1200px;
 	margin: auto;
 `
 

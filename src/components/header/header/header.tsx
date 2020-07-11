@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-import { HeaderContainer, HeaderWrapper } from './header.style'
+import {
+	HeaderContainer,
+	HeaderWrapper,
+	HeaderHamburgerWrapper,
+	HeaderNavbarWrapper
+} from './header.style'
 import { HeaderSocial, HeaderSocialProps } from '../header-social/header-social'
 import { Logo } from '../logo/logo'
 import { Navbar, NavbarProps } from '../navbar/navbar'
@@ -23,8 +28,12 @@ export const Header: React.FC<HeaderProps> = ({ header }) => {
 			<HeaderSocial contact={header.headerSocial.contact} />
 			<HeaderWrapper>
 				<Logo />
-				<Navbar items={header.navbar.items} />
-				<Hamburger open={openNavbar} onClick={handleHamburgerClick} />
+				<HeaderNavbarWrapper open={openNavbar}>
+					<Navbar items={header.navbar.items} />
+				</HeaderNavbarWrapper>
+				<HeaderHamburgerWrapper>
+					<Hamburger open={openNavbar} onClick={handleHamburgerClick} />
+				</HeaderHamburgerWrapper>
 			</HeaderWrapper>
 		</HeaderContainer>
 	)

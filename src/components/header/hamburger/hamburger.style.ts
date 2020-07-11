@@ -10,6 +10,11 @@ export const HamburgerWrapper = styled.section<HamburgerWrapperProps>`
 	height: 16px;
 	position: relative;
 	cursor: pointer;
+	${({ theme, open }: HamburgerWrapperProps) => css`
+		${HamburgerItem} {
+			background-color: ${open ? theme.colors.light100 : theme.colors.dark100};
+		}
+	`}
 
 	${({ open }: HamburgerWrapperProps) =>
 		open &&
@@ -67,11 +72,9 @@ export const HamburgerItem = styled.span`
 	width: 100%;
 	height: 100%;
 	border-radius: 1px;
-	transition: transform 0.3s;
-	will-change: transform;
-	${({ theme }: ThemeProps) => css`
-		background-color: ${theme.colors.dark100};
-	`}
+	transition-duration: 0.3s;
+	transition-property: transform, background-color;
+	will-change: transform, background-color;
 `
 
 export const HamburgerItem1 = styled(HamburgerItem)``
