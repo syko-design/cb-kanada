@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { ThemeProps } from 'theme/theme.type'
 
 export const NavbarContainer = styled.nav`
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: ${({ theme }: ThemeProps) => theme.media.mobileBp}) {
 		${({ theme }: ThemeProps) => css`
 			width: 100%;
 			height: 100%;

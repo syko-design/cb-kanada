@@ -6,7 +6,7 @@ export const HeaderSocialContainer = styled.section`
 		background-color: ${theme.colors.dark100};
 	`}
 
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: ${({ theme }: ThemeProps) => theme.media.mobileBp}) {
 		display: none;
 	}
 `
@@ -16,7 +16,7 @@ export const HeaderSocialWrapper = styled.section`
 	justify-content: space-between;
 	padding: 10px 0;
 	width: 90%;
-	max-width: 1200px;
+	max-width: 1240px;
 	margin: auto;
 `
 

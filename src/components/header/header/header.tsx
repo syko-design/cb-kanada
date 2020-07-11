@@ -5,13 +5,11 @@ import {
 	HeaderHamburgerWrapper,
 	HeaderNavbarWrapper
 } from './header.style'
-import { HeaderSocial, HeaderSocialProps } from '../header-social/header-social'
 import { Logo } from '../logo/logo'
 import { Navbar, NavbarProps } from '../navbar/navbar'
 import { Hamburger } from '../hamburger/hamburger'
 
 export interface HeaderInput {
-	headerSocial: HeaderSocialProps
 	navbar: NavbarProps
 }
 
@@ -25,7 +23,6 @@ export const Header: React.FC<HeaderProps> = ({ header }) => {
 
 	return (
 		<HeaderContainer>
-			<HeaderSocial contact={header.headerSocial.contact} />
 			<HeaderWrapper>
 				<Logo />
 				<HeaderNavbarWrapper open={openNavbar}>

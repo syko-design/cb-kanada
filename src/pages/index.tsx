@@ -11,12 +11,16 @@ import { contactProps } from '../input/contact.props'
 import { Hero } from 'components/hero/hero'
 import { HeroOffer } from 'components/hero-offer/hero-offer/hero-offer'
 import { heroOfferProps } from 'input/hero-offer.props'
+import { HeaderSocial } from 'components/header/header-social/header-social'
+import { headerSocialProps } from 'input/header-social.props'
+import { heroProps } from 'input/hero.props'
 
 const IndexPage: React.FC = () => (
 	<Layout>
 		<SEO title="Home" />
+		<HeaderSocial headerSocial={headerSocialProps} />
 		<Header header={headerProps} />
-		<Hero />
+		<Hero hero={heroProps} />
 		<HeroOffer heroOffer={heroOfferProps} />
 		<About about={aboutProps} />
 		<Contact contact={contactProps} />
