@@ -5,12 +5,17 @@ export const HeaderSocialContainer = styled.section`
 	${({ theme }: ThemeProps) => css`
 		background-color: ${theme.colors.dark100};
 	`}
+
+	@media screen and (max-width: 1024px) {
+		display: none;
+	}
 `
 
 export const HeaderSocialWrapper = styled.section`
 	display: flex;
 	justify-content: space-between;
-	padding: 10px;
+	padding: 10px 0;
+	width: 90%;
 	max-width: 1200px;
 	margin: auto;
 `
@@ -22,10 +27,13 @@ export const HeaderContactSection = styled.section`
 `
 
 export const ContactText = styled.p`
-	margin: 0 10px;
-	font-size: 12px;
-	font-weight: 300;
+	&:first-child {
+		margin-right: 15px;
+	}
+
 	${({ theme }: ThemeProps) => css`
+		font-weight: ${theme.fontWeight.light};
+		font-size: ${theme.fontSize.small};
 		color: ${theme.colors.light100};
 	`}
 `
