@@ -28,5 +28,7 @@ export const theme: Theme = {
 	fromFamily: {
 		primary: `'Poppins', sans-serif`
 	},
-	media: {}
+	media: {
+		mobileBp: '1023px'
+	}
 }
