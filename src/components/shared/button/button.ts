@@ -9,6 +9,10 @@ export const Button = styled.button`
 	will-change: background-color, color;
 	cursor: pointer;
 
+	:focus {
+		outline: none;
+	}
+
 	${({ theme }: ThemeProps) => css`
 		font-weight: ${theme.fontWeight.semiBold};
 		border: 1px solid ${theme.colors.primary100};
