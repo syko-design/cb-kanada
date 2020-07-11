@@ -33,6 +33,9 @@ export const HeroArticle = styled.article`
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	${({ theme }: ThemeProps) => css`
+		color: ${theme.colors.light100};
+	`}
 `
 
 export const HeroHeader = styled.header`
@@ -43,7 +46,6 @@ export const HeroHeading1 = styled.h1`
 	${Heading}
 	margin: 25px 0;
 	${({ theme }: ThemeProps) => css`
-		color: ${theme.colors.light100};
 		font-size: ${theme.fontSize.headingExtraLarge};
 
 		@media screen and (max-width: ${theme.media.mobileBp}) {
@@ -55,18 +57,14 @@ export const HeroHeading1 = styled.h1`
 export const HeroHeading2 = styled.h2`
 	text-transform: uppercase;
 	${({ theme }: ThemeProps) => css`
-		color: ${theme.colors.light100};
 		font-weight: ${theme.fontWeight.light};
-		font-size: ${theme.fontSize.normal};
+		font-size: 24px;
 	`}
 `
 
 export const HeroArticleText = styled.p`
 	max-width: 600px;
 	text-align: center;
-	${({ theme }: ThemeProps) => css`
-		color: ${theme.colors.light100};
-	`}
 `
 
 export const HeroArticleButton = styled(Button)`

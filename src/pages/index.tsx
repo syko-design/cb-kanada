@@ -7,12 +7,15 @@ import { headerProps } from 'input/header.props'
 import { About } from '../components/about/about'
 import { aboutProps } from '../input/about.props'
 import { Hero } from 'components/hero/hero'
+import { HeroOffer } from 'components/hero-offer/hero-offer/hero-offer'
+import { heroOfferProps } from 'input/hero-offer.props'
 
 const IndexPage: React.FC = () => (
 	<Layout>
 		<SEO title="Home" />
 		<Header header={headerProps} />
 		<Hero />
+		<HeroOffer heroOffer={heroOfferProps} />
 		<About about={aboutProps} />
 	</Layout>
 )

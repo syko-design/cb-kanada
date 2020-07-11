@@ -3,7 +3,7 @@ import { Theme } from './theme.type'
 export const theme: Theme = {
 	colors: {
 		primary100: '#fab700',
-		primary200: '#ffc10a',
+		primary200: '#f0ad00',
 		secondary100: '#0e1328',
 		secondary200: '#04091e',
 		light100: '#fff',
