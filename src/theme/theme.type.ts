@@ -25,7 +25,9 @@ export interface Theme {
 	fromFamily: {
 		primary: string
 	}
-	media: {}
+	media: {
+		mobileBp: string
+	}
 }
 
 export interface ThemeProps {
