@@ -32,5 +32,12 @@ module.exports = {
 		// `gatsby-plugin-offline`,
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-styled-components`,
+		{
+			resolve: `gatsby-plugin-google-fonts`,
+			options: {
+				fonts: [`Poppins:300,400,500,600`],
+				display: 'swap',
+			},
+		},
 	],
 }

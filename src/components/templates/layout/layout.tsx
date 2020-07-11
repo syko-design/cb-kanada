@@ -6,6 +6,9 @@
  */
 
 import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import { theme } from 'theme/theme'
+import { GlobalStyles } from 'theme/global-styles'
 
 interface LayoutProps {
 	children: React.ReactNode
@@ -13,9 +16,12 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
 	return (
-		<div>
-			<main>{children}</main>
-		</div>
+		<ThemeProvider theme={theme}>
+			<GlobalStyles />
+			<section>
+				{children}
+			</section>
+		</ThemeProvider>
 	)
 }
 
