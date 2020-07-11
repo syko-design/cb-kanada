@@ -6,6 +6,8 @@ import { Header } from 'components/header/header/header'
 import { headerProps } from 'input/header.props'
 import { About } from '../components/about/about'
 import { aboutProps } from '../input/about.props'
+import { Contact } from '../components/contact/contact'
+import { contactProps } from '../input/contact.props'
 import { Hero } from 'components/hero/hero'
 
 const IndexPage: React.FC = () => (
@@ -14,6 +16,7 @@ const IndexPage: React.FC = () => (
 		<Header header={headerProps} />
 		<Hero />
 		<About about={aboutProps} />
+		<Contact contact={contactProps} />
 	</Layout>
 )
 

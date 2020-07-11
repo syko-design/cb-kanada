@@ -22,7 +22,10 @@ export const About: React.FC<Props> = (props) => {
 	`)
 
 	return (
-		<Wrapper>
+		<Wrapper id={'about-us'}>
+			<ColumnImage>
+				<Image fluid={data.placeholderImage.childImageSharp.fluid} alt="About us photo" />
+			</ColumnImage>
 			<ColumnText>
 				<Header>
 					<Heading3>{props.about.header}</Heading3>
@@ -30,9 +33,6 @@ export const About: React.FC<Props> = (props) => {
 				</Header>
 				<Content>{props.about.content}</Content>
 			</ColumnText>
-			<ColumnImage>
-				<Image fluid={data.placeholderImage.childImageSharp.fluid} alt="backgroud" />
-			</ColumnImage>
 		</Wrapper>
 	)
 }

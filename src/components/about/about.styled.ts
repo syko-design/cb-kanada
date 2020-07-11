@@ -12,7 +12,7 @@ export const Wrapper = styled.section`
 	background-color: #f9f9ff;
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
- 		flex-direction: column;
+ 		flex-direction: column-reverse;
   }
 }
 `
@@ -28,11 +28,11 @@ export const ColumnText = styled.article`
 	display: flex;
 	flex-direction: column;
 	max-width: 600px;
-	margin-right: 20px;
+	margin-left: 20px;
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
 		max-width: 100%;
-		margin-right: 0;
+		margin-left: 0;
 	}
 `
 
@@ -42,12 +42,12 @@ export const ColumnImage = styled.article`
 	flex-grow: 1;
 	flex-basis: 0;
 	max-width: 600px;
-	margin-left: 20px;
+	margin-right: 20px;
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
 		width: 100%;
 		max-width: 100%;
-		margin-left: 0;
+		margin-right: 0;
 		flex-basis: 100%;
 		margin-top: 30px;
 	}
@@ -63,7 +63,7 @@ export const Image = styled(Img)`
 	:before {
 		content: '';
 		position: absolute;
-		left: 8px;
+		left: -8px;
 		top: 8px;
 		width: 100%;
 		height: 100%;
