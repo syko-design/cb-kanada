@@ -38,6 +38,13 @@ module.exports = {
 				fonts: [`Poppins:300,400,500,600`],
 				display: 'swap'
 			}
+		},
+		{
+			resolve: 'gatsby-background-image-es5',
+			options: {
+				// add your own characters to escape, replacing the default ':/'
+				specialChars: '/:'
+			}
 		}
 	]
 }

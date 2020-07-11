@@ -23,5 +23,9 @@ export const Button = styled.button`
 			background-color: transparent;
 			color: ${theme.colors.primary100};
 		}
+
+		&:focus {
+			outline: none;
+		}
 	`}
 `

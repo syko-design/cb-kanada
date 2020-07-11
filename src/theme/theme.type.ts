@@ -8,6 +8,7 @@ export interface Theme {
 		light200: string
 		dark100: string
 		dark200: string
+		shadow100: string
 	}
 	fontSize: {
 		small: string
@@ -15,6 +16,7 @@ export interface Theme {
 		large: string
 		headingSmall: string
 		headingLarge: string
+		headingExtraLarge: string
 	}
 	fontWeight: {
 		light: string
