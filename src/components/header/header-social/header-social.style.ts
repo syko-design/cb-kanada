@@ -22,7 +22,10 @@ export const HeaderContactSection = styled.section`
 `
 
 export const ContactText = styled.p`
-	margin: 0 10px;
+	&:first-child {
+		margin-right: 15px;
+	}
+
 	${({ theme }: ThemeProps) => css`
 		font-weight: ${theme.fontWeight.light};
 		font-size: ${theme.fontSize.small};
