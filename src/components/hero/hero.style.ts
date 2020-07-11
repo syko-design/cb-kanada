@@ -5,8 +5,14 @@ import { ThemeProps } from 'theme/theme.type'
 import { Button } from 'components/shared/button/button'
 
 export const HeroWrapper = styled.section`
-	height: 800px;
+	height: calc(100vh - 106px);
 	position: relative;
+
+	${({ theme }: ThemeProps) => css`
+		@media screen and (max-width: ${theme.media.mobileBp}) {
+			height: calc(100vh - 68px);
+		}
+	`}
 `
 
 export const HeroCoverImage = styled(BackgroundImage)`
@@ -22,6 +28,7 @@ export const HeroArticle = styled.article`
 	left: 0;
 	width: 100%;
 	height: 100%;
+	padding: 25px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -37,7 +44,11 @@ export const HeroHeading1 = styled.h1`
 	margin: 25px 0;
 	${({ theme }: ThemeProps) => css`
 		color: ${theme.colors.light100};
-		font-size: 48px;
+		font-size: ${theme.fontSize.headingExtraLarge};
+
+		@media screen and (max-width: ${theme.media.mobileBp}) {
+			font-size: ${theme.fontSize.headingLarge};
+		}
 	`}
 `
 

@@ -25,15 +25,15 @@ export const HeaderNavbarWrapper = styled.section<HeaderNavbarWrapperProps>`
 		height: 100vh;
 		position: fixed;
 		top: 0;
-		right: 0;
-		transform: translateX(100%);
+		right: -100%;
+		transform: translateX(0);
 		transition: transform 0.3s;
 		will-change: transform;
 
 		${({ open }: HeaderNavbarWrapperProps) =>
 			open &&
 			css`
-				transform: translateX(0);
+				transform: translateX(-100%);
 			`}
 	}
 `

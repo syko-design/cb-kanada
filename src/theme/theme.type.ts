@@ -16,6 +16,7 @@ export interface Theme {
 		large: string
 		headingSmall: string
 		headingLarge: string
+		headingExtraLarge: string
 	}
 	fontWeight: {
 		light: string

@@ -17,7 +17,8 @@ export const theme: Theme = {
 		normal: '14px',
 		large: '16px',
 		headingSmall: '18px',
-		headingLarge: '36px'
+		headingLarge: '36px',
+		headingExtraLarge: '48px'
 	},
 	fontWeight: {
 		light: '300',
