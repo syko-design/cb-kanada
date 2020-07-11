@@ -19,7 +19,7 @@ export const HeroCoverImage = styled(BackgroundImage)`
 	height: 100%;
 	background-size: cover;
 	background-position: center 60%;
-	filter: brightness(0.5);
+	filter: brightness(0.65);
 `
 
 export const HeroArticle = styled.article`
