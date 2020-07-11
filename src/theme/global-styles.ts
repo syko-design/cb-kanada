@@ -7,18 +7,19 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
         ${({ theme }: ThemeProps) => css`
+					font-family: ${theme.fromFamily.primary};
+
 					::selection {
-						background: ${theme.primary100};
+						background: ${theme.colors.primary100};
 					}
 				`}
     }
 
     body {
-        font-size: 14px;
         ${({ theme }: ThemeProps) => css`
-					color: ${theme.dark100};
+					font-size: ${theme.fontSize.normal};
+					color: ${theme.colors.dark100};
 				`}
     }
 

@@ -3,7 +3,7 @@ import { ThemeProps } from 'theme/theme.type'
 
 export const HeaderSocialContainer = styled.section`
 	${({ theme }: ThemeProps) => css`
-		background-color: ${theme.dark100};
+		background-color: ${theme.colors.dark100};
 	`}
 `
 
@@ -26,6 +26,6 @@ export const ContactText = styled.p`
 	font-size: 12px;
 	font-weight: 300;
 	${({ theme }: ThemeProps) => css`
-		color: ${theme.light100};
+		color: ${theme.colors.light100};
 	`}
 `
