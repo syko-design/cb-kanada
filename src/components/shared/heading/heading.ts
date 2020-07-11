@@ -1,7 +1,7 @@
 import styled, { css, FlattenSimpleInterpolation, StyledProps } from 'styled-components'
 import { ThemeProps } from 'theme/theme.type'
 
-const Heading = css`
+export const Heading = css`
 	font-weight: 600;
 	line-height: 120%;
 `
