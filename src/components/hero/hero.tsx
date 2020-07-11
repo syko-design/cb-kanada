@@ -8,10 +8,24 @@ import {
 	HeroHeader,
 	HeroHeading2,
 	HeroArticleText,
-	HeroArticleButton
+	HeroArticleButton,
+	HeroArticleWrapper
 } from './hero.style'
 
-export const Hero = () => {
+export interface HeroType {
+	heading1: string
+	heading2: string
+	description: string
+	buttonValue: string
+}
+
+export interface HeroProps {
+	hero: HeroType
+}
+
+export const Hero: React.FC<HeroProps> = ({
+	hero: { heading1, heading2, description, buttonValue }
+}) => {
 	const data = useStaticQuery(graphql`
 		query {
 			placeholderImage: file(relativePath: { eq: "BR_Schueco_67PD_Haus002.jpg" }) {
@@ -30,17 +44,16 @@ export const Hero = () => {
 				fluid={data.placeholderImage.childImageSharp.fluid}
 				alt="cover"
 			></HeroCoverImage>
-			<HeroArticle>
-				<HeroHeader>
-					<HeroHeading2>Rezydencje i obiekty komercyjne</HeroHeading2>
-					<HeroHeading1>Nowoczesne okna i drzwi z Eurpy</HeroHeading1>
-				</HeroHeader>
-				<HeroArticleText>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis labore laudantium
-					officiis facilis debitis beatae, illum exercitationem possimus atque sed.
-				</HeroArticleText>
-				<HeroArticleButton>Get started</HeroArticleButton>
-			</HeroArticle>
+			<HeroArticleWrapper>
+				<HeroArticle>
+					<HeroHeader>
+						<HeroHeading1>{heading2}</HeroHeading1>
+						<HeroHeading2>{heading1}</HeroHeading2>
+					</HeroHeader>
+					<HeroArticleText>{description}</HeroArticleText>
+					<HeroArticleButton>{buttonValue}</HeroArticleButton>
+				</HeroArticle>
+			</HeroArticleWrapper>
 		</HeroWrapper>
 	)
 }

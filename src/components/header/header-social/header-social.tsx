@@ -7,20 +7,24 @@ import {
 	HeaderSocialContainer
 } from './header-social.style'
 
-export interface HeaderSocialProps {
+export interface HeaderSocial {
 	contact: {
 		phone: string
 		email: string
 	}
 }
 
-export const HeaderSocial: React.FC<HeaderSocialProps> = ({ contact }) => (
+export interface HeaderSocialProps {
+	headerSocial: HeaderSocial
+}
+
+export const HeaderSocial: React.FC<HeaderSocialProps> = ({ headerSocial }) => (
 	<HeaderSocialContainer>
 		<HeaderSocialWrapper>
 			<HeaderSocialSection></HeaderSocialSection>
 			<HeaderContactSection>
-				<ContactText>{contact.phone}</ContactText>
-				<ContactText>{contact.email}</ContactText>
+				<ContactText>{headerSocial.contact.phone}</ContactText>
+				<ContactText>{headerSocial.contact.email}</ContactText>
 			</HeaderContactSection>
 		</HeaderSocialWrapper>
 	</HeaderSocialContainer>
