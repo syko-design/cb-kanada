@@ -33,7 +33,7 @@ export const NavbarListItem = styled.li`
 	cursor: pointer;
 `
 
-export const NavbarListLink = styled(Link)`
+const LinkCss = css`
 	text-decoration: none;
 	display: block;
 	padding: 25px 15px;
@@ -43,4 +43,12 @@ export const NavbarListLink = styled(Link)`
 		font-size: ${theme.fontSize.small};
 		color: ${theme.colors.dark100};
 	`}
+`
+
+export const NavbarListLink = styled(Link)`
+	${LinkCss}
+`
+
+export const NavbarListTextAsLink = styled.p`
+	${LinkCss}
 `

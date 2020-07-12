@@ -17,9 +17,10 @@ import { Offer } from '../components/offer/offer'
 import { offerProps } from '../input/offer.props'
 import { HomeGallery } from 'components/home-gallery/home-gallery'
 import { homeGallertProps } from 'input/home-gallery.props'
+import { PathProps } from 'types/path.props'
 
-const IndexPage: React.FC = () => (
-	<Layout>
+const IndexPage: React.FC<PathProps> = ({ path }) => (
+	<Layout path={path}>
 		<SEO title="Home" />
 		<Hero hero={heroProps} />
 		<HeroOffer heroOffer={heroOfferProps} />

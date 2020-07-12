@@ -5,6 +5,7 @@ import SEO from 'components/templates/seo/seo'
 import { newsProps } from '../input/news.props'
 import { News } from '../components/news/postPage'
 import { SinglePost } from '../components/news/singlePost'
+import { PathProps } from 'types/path.props'
 
 const PostsPage: React.FC<RouteComponentProps> = () => (
 	<>
@@ -13,8 +14,8 @@ const PostsPage: React.FC<RouteComponentProps> = () => (
 	</>
 )
 
-const NewsWrap: React.FC = () => (
-	<Layout>
+const NewsWrap: React.FC<PathProps> = ({ path }) => (
+	<Layout path={path}>
 		<Router>
 			<PostsPage path={'/posts/'} />
 			<SinglePost path={`posts/:postSlug`} />

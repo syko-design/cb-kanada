@@ -8,13 +8,18 @@ import { HeaderSocial } from 'components/header/header-social/header-social'
 import { headerSocialProps } from 'input/header-social.props'
 import { Footer } from 'components/footer/footer'
 
-const Layout: React.FC = ({ children }) => {
+interface LayoutProps {
+	children: React.ReactNode
+	path: string
+
+
+const Layout = ({ children, path }: LayoutProps) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
 			<section>
 				<HeaderSocial headerSocial={headerSocialProps} />
-				<Header header={headerProps} />
+				<Header header={headerProps} path={path} />
 				{children}
 				<Footer />
 			</section>
