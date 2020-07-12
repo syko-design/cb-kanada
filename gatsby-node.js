@@ -11,7 +11,15 @@ const { resolve } = require('path')
 exports.onCreateWebpackConfig = ({ actions }) => {
 	actions.setWebpackConfig({
 		resolve: {
-			modules: [resolve(__dirname, 'src'), 'node_modules'],
-		},
+			modules: [resolve(__dirname, 'src'), 'node_modules']
+		}
 	})
+}
+
+exports.onCreatePage = async ({ page, actions }) => {
+	const { createPage } = actions
+	if (page.path.match(/^\/posts/)) {
+		page.matchPath = '/posts/*'
+		createPage(page)
+	}
 }

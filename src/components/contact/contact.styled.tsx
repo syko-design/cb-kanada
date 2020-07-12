@@ -55,7 +55,7 @@ export const ColumnForm = styled.article`
 export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
-	background-color: #f9f9ff;
+	background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light300};
 	padding: 2rem 3rem;
 `
 

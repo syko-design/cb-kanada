@@ -8,6 +8,7 @@ export const theme: Theme = {
 		secondary200: '#04091e',
 		light100: '#fff',
 		light200: '#fafafa',
+		light300: '#f9f9ff',
 		dark100: '#222222',
 		dark200: '#777777',
 		shadow100: '#22222222'

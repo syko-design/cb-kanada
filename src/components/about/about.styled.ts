@@ -9,7 +9,7 @@ export const Wrapper = styled.section`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #f9f9ff;
+	background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light300};
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
  		flex-direction: column-reverse;
