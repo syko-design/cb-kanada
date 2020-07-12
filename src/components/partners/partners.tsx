@@ -30,7 +30,7 @@ export const Partners: React.FC<PartnersProps> = ({ partners }) => (
 		</PartnersHeader>
 		<PartnersWrapper>
 			{partners.partners.map(({ logo }, i) => (
-				<PartnerWrapper>
+				<PartnerWrapper key={i}>
 					<PartnerLogo src={logo} alt="partner" />
 				</PartnerWrapper>
 			))}

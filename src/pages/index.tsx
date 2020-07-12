@@ -10,8 +10,6 @@ import { newsProps } from '../input/news.props'
 import { News } from '../components/news/news'
 import { HeroOffer } from 'components/hero-offer/hero-offer/hero-offer'
 import { heroOfferProps } from 'input/hero-offer.props'
-import { HeaderSocial } from 'components/header/header-social/header-social'
-import { headerSocialProps } from 'input/header-social.props'
 import { heroProps } from 'input/hero.props'
 import { Partners } from 'components/partners/partners'
 import { partnersProps } from 'input/partners.props'
@@ -19,13 +17,11 @@ import { partnersProps } from 'input/partners.props'
 const IndexPage: React.FC = () => (
 	<Layout>
 		<SEO title="Home" />
-		<HeaderSocial headerSocial={headerSocialProps} />
-		<Header header={headerProps} />
 		<Hero hero={heroProps} />
 		<HeroOffer heroOffer={heroOfferProps} />
 		<Partners partners={partnersProps} />
 		<About about={aboutProps} />
-    <News news={newsProps} />
+		<News news={newsProps} />
 		<Contact contact={contactProps} />
 	</Layout>
 )
