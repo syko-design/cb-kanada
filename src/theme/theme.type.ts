@@ -6,6 +6,7 @@ export interface Theme {
 		secondary200: string
 		light100: string
 		light200: string
+		light300: string
 		dark100: string
 		dark200: string
 		shadow100: string
