@@ -12,9 +12,8 @@ export const Wrapper = styled.section`
 	background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light300};
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
- 		flex-direction: column-reverse;
-  }
-}
+		flex-direction: column-reverse;
+	}
 `
 
 export const Header = styled.header`

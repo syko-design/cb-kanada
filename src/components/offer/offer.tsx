@@ -10,7 +10,7 @@ interface Props {
 
 export const Offer: React.FC<Props> = (props) => {
 	return (
-		<Wrapper id={'our-offer'}>
+		<Wrapper id="offer-section">
 			<Header>
 				<Heading3>{props.offer.header}</Heading3>
 				<Heading5>{props.offer.subHeader}</Heading5>

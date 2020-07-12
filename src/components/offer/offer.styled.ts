@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
 	padding: 3rem 10vw;
 	display: flex;
 	flex-direction: column;
-	// background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light300};
+	/* background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light300}; */
 `
 
 export const Header = styled.header`
@@ -156,8 +156,7 @@ export const OfferDetailsHeader = styled.section`
 	justify-content: center;
 	align-items: center;
 	height: fit-content;
-	font-size: 48px;
-	font-size: 6vw;
+	font-size: 75px;
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
 		font-size: 48px;
@@ -224,7 +223,9 @@ export const OfferDetailsContent = styled.section`
 	justify-content: flex-start;
 	align-items: flex-start;
 	p {
-		font-size: calc(12px + 1vw);
+		${({ theme }: ThemeProps) => css`
+			font-size: ${theme.fontSize.large};
+		`}
 	}
 `
 
@@ -252,8 +253,8 @@ export const OfferDetailsImageBtn = styled.button`
 	background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.secondary100};
 	width: 5vw;
 	height: 5vw;
-	min-height: 60px;
-	min-width: 60px;
+	max-height: 60px;
+	max-width: 60px;
 	border: none;
 
 	svg {

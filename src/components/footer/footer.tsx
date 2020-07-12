@@ -10,9 +10,12 @@ import {
 	CompanyDataItem,
 	DataHeading
 } from './footer.style'
+import { Contact } from 'components/contact/contact'
+import { contactProps } from 'input/contact.props'
 
 export const Footer = () => (
 	<FooterWrapper>
+		<Contact contact={contactProps} />
 		<LocalizationWrapper>
 			<CompanyDataWrapper>
 				<CompanyDataItem>

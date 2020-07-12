@@ -14,9 +14,8 @@ export const Wrapper = styled.section`
 	flex-wrap: wrap;
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
- 		flex-direction: column;
-  }
-}
+		flex-direction: column;
+	}
 `
 
 export const Header = styled.header`

@@ -22,7 +22,7 @@ export const About: React.FC<Props> = (props) => {
 	`)
 
 	return (
-		<Wrapper id={'about-us'}>
+		<Wrapper id="about-section">
 			<ColumnImage>
 				<Image fluid={data.placeholderImage.childImageSharp.fluid} alt="About us photo" />
 			</ColumnImage>

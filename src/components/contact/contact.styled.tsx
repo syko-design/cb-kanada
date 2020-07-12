@@ -9,12 +9,10 @@ export const Wrapper = styled.section`
 	justify-content: center;
 	align-items: flex-start;
 	flex-wrap: wrap;
-	background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light100};
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
- 		flex-direction: column;
-  }
-}
+		flex-direction: column;
+	}
 `
 
 export const Header = styled.header`
@@ -55,7 +53,6 @@ export const ColumnForm = styled.article`
 export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
-	background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light300};
 	padding: 2rem 3rem;
 `
 

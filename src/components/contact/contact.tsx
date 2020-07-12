@@ -24,7 +24,7 @@ export const Contact: React.FC<Props> = (props) => {
 	}
 
 	return (
-		<Wrapper id="contact">
+		<Wrapper id="contact-section">
 			<ColumnText>
 				<Header>
 					<Heading3>{props.contact.header}</Heading3>

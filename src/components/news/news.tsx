@@ -44,7 +44,7 @@ interface Props {
 
 export const News: React.FC<Props> = (props) => {
 	return (
-		<Wrapper>
+		<Wrapper id="news-section">
 			<Header>
 				<Heading3>{props.news.header}</Heading3>
 				<Heading5>{props.news.subHeader}</Heading5>
