@@ -14,6 +14,8 @@ import { heroOfferProps } from 'input/hero-offer.props'
 import { HeaderSocial } from 'components/header/header-social/header-social'
 import { headerSocialProps } from 'input/header-social.props'
 import { heroProps } from 'input/hero.props'
+import { Partners } from 'components/partners/partners'
+import { partnersProps } from 'input/partners.props'
 
 const IndexPage: React.FC = () => (
 	<Layout>
@@ -22,6 +24,7 @@ const IndexPage: React.FC = () => (
 		<Header header={headerProps} />
 		<Hero hero={heroProps} />
 		<HeroOffer heroOffer={heroOfferProps} />
+		<Partners partners={partnersProps} />
 		<About about={aboutProps} />
 		<Contact contact={contactProps} />
 	</Layout>
