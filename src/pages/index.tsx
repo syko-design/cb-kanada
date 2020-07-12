@@ -13,6 +13,8 @@ import { heroOfferProps } from 'input/hero-offer.props'
 import { heroProps } from 'input/hero.props'
 import { Partners } from 'components/partners/partners'
 import { partnersProps } from 'input/partners.props'
+import { Offer } from '../components/offer/offer'
+import { offerProps } from '../input/offer.props'
 import { HomeGallery } from 'components/home-gallery/home-gallery'
 import { homeGallertProps } from 'input/home-gallery.props'
 
@@ -24,6 +26,7 @@ const IndexPage: React.FC = () => (
 		<Partners partners={partnersProps} />
 		<HomeGallery gallery={homeGallertProps} />
 		<About about={aboutProps} />
+		<Offer offer={offerProps} />
 		<News news={newsProps} />
 		<Contact contact={contactProps} />
 	</Layout>
