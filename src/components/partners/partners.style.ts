@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const PartnersHeader = styled.header`
 	display: flex;
 	flex-direction: column-reverse;
+	text-align: center;
 `
 
 export const PartnersWrapper = styled.section`

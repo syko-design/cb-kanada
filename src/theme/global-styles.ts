@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
 
 					::selection {
 						background: ${theme.colors.primary100};
+						color: white;
 					}
 				`}
     }
@@ -22,5 +23,8 @@ export const GlobalStyles = createGlobalStyle`
 					color: ${theme.colors.dark100};
 				`}
     }
-
+    
+    .block-scroll {
+    	overflow: hidden;
+    }
 `

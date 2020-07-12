@@ -67,9 +67,15 @@ export const Image = styled(Img)`
 		top: 8px;
 		width: 100%;
 		height: 100%;
+		will-change: transform;
+		transition: all 0.1s linear;
 		${({ theme }: ThemeProps): FlattenSimpleInterpolation => css`
 			background-color: ${theme.colors.primary100};
 		`}
+	}
+
+	:hover:before {
+		transform: translate(16px, -16px);
 	}
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {

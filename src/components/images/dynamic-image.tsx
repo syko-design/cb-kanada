@@ -17,7 +17,7 @@ export const DynamicImage: React.FC<DynamicImageProps> = ({ alt, fileName }) => 
 							relativePath
 							name
 							childImageSharp {
-								fluid(maxWidth: 600) {
+								fluid(maxWidth: 1280) {
 									...GatsbyImageSharpFluid
 								}
 							}

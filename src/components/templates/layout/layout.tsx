@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from 'theme/theme'
@@ -18,7 +11,7 @@ import { Footer } from 'components/footer/footer'
 interface LayoutProps {
 	children: React.ReactNode
 	path: string
-}
+
 
 const Layout = ({ children, path }: LayoutProps) => {
 	return (
