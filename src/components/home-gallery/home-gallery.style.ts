@@ -1,9 +1,11 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 import { GalleryArticleWrapper } from './gallery-article.style'
+import { ThemeProps } from 'theme/theme.type'
 
 export const HomeGalleryContainer = styled.section`
 	max-width: 1240px;
+	width: 90%;
 	margin: 50px auto;
 `
 
@@ -15,6 +17,25 @@ export const HomeGalleryWrapper = styled.section`
 		'image1 image1 image1 image1 image2 image2'
 		'image3 image3 image3 image4 image4 image4';
 	gap: 50px;
+
+	${({ theme }: ThemeProps) => css`
+		@media screen and (max-width: ${theme.media.mobileBp}) {
+			gap: 25px;
+			grid-template-areas:
+				'image1 image1 image1 image2 image2 image2'
+				'image3 image3 image3 image4 image4 image4';
+		}
+	`}
+
+	@media screen and (max-width: 800px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, minmax(325px, 1fr));
+		grid-template-areas:
+			'image1'
+			'image2'
+			'image3'
+			'image4';
+	}
 `
 
 export const GalleryHeader = styled.header`
