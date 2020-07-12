@@ -7,13 +7,22 @@ import {
 	ArticleIcon
 } from './gallery-article.style'
 
-export const GalleryArticle = () => (
+export interface GalleryArticleItem {
+	heading: string
+	icon: string
+}
+
+export interface GalleryArticleProps {
+	article: GalleryArticleItem
+}
+
+export const GalleryArticle: React.FC<GalleryArticleProps> = ({ article: { heading, icon } }) => (
 	<GalleryArticleWrapper>
 		<Hexagon>
 			<ArticleIconWrapper>
-				<ArticleIcon src="hero-offer/window.svg" alt="article icon"></ArticleIcon>
+				<ArticleIcon src={icon} alt="article icon"></ArticleIcon>
 			</ArticleIconWrapper>
 		</Hexagon>
-		<GalleryLabel>Windows</GalleryLabel>
+		<GalleryLabel>{heading}</GalleryLabel>
 	</GalleryArticleWrapper>
 )

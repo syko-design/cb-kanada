@@ -13,9 +13,25 @@ import {
 import { Heading3, Heading5 } from 'components/shared/heading/heading'
 import { Button } from 'components/shared/button/button'
 import { useStaticQuery, graphql } from 'gatsby'
-import { GalleryArticle } from './gallery-article'
+import { GalleryArticle, GalleryArticleItem } from './gallery-article'
 
-export const HomeGallery = () => {
+export interface HomeGalleryType {
+	heading: string
+	subHeading: string
+	buttonValue: string
+	article: {
+		a1: GalleryArticleItem
+		a2: GalleryArticleItem
+		a3: GalleryArticleItem
+		a4: GalleryArticleItem
+	}
+}
+
+export interface HomeGalleryProps {
+	gallery: HomeGalleryType
+}
+
+export const HomeGallery: React.FC<HomeGalleryProps> = ({ gallery }) => {
 	const data = useStaticQuery(graphql`
 		query {
 			placeholderImage1: file(relativePath: { eq: "BR_Schueco_67PD_Haus002.jpg" }) {
@@ -52,8 +68,8 @@ export const HomeGallery = () => {
 	return (
 		<HomeGalleryContainer>
 			<GalleryHeader>
-				<Heading3>Latest Finished Projects</Heading3>
-				<Heading5>Check out our gallery</Heading5>
+				<Heading3>{gallery.heading}</Heading3>
+				<Heading5>{gallery.subHeading}</Heading5>
 			</GalleryHeader>
 			<HomeGalleryWrapper>
 				<GalleryImageWrapper1>
@@ -61,32 +77,32 @@ export const HomeGallery = () => {
 						fluid={data.placeholderImage1.childImageSharp.fluid}
 						alt="gallery"
 					></GalleryImage>
-					<GalleryArticle />
+					<GalleryArticle article={gallery.article.a1} />
 				</GalleryImageWrapper1>
 				<GalleryImageWrapper2>
 					<GalleryImage
 						fluid={data.placeholderImage2.childImageSharp.fluid}
 						alt="gallery"
 					></GalleryImage>
-					<GalleryArticle />
+					<GalleryArticle article={gallery.article.a2} />
 				</GalleryImageWrapper2>
 				<GalleryImageWrapper3>
 					<GalleryImage
 						fluid={data.placeholderImage3.childImageSharp.fluid}
 						alt="gallery"
 					></GalleryImage>
-					<GalleryArticle />
+					<GalleryArticle article={gallery.article.a3} />
 				</GalleryImageWrapper3>
 				<GalleryImageWrapper4>
 					<GalleryImage
 						fluid={data.placeholderImage4.childImageSharp.fluid}
 						alt="gallery"
 					></GalleryImage>
-					<GalleryArticle />
+					<GalleryArticle article={gallery.article.a4} />
 				</GalleryImageWrapper4>
 			</HomeGalleryWrapper>
 			<GalleryFooter>
-				<Button>Show more</Button>
+				<Button>{gallery.buttonValue}</Button>
 			</GalleryFooter>
 		</HomeGalleryContainer>
 	)
