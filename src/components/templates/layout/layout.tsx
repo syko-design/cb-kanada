@@ -11,6 +11,8 @@ import { theme } from 'theme/theme'
 import { GlobalStyles } from 'theme/global-styles'
 import { headerProps } from '../../../input/header.props'
 import { Header } from '../../header/header/header'
+import { HeaderSocial } from 'components/header/header-social/header-social'
+import { headerSocialProps } from 'input/header-social.props'
 
 interface LayoutProps {
 	children: React.ReactNode
@@ -21,6 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
 			<section>
+				<HeaderSocial headerSocial={headerSocialProps} />
 				<Header header={headerProps} />
 				{children}
 			</section>
