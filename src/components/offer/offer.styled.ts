@@ -8,7 +8,6 @@ export const Wrapper = styled.section`
 	padding: 3rem 10vw;
 	display: flex;
 	flex-direction: column;
-	/* background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light300}; */
 `
 
 export const Header = styled.header`
@@ -133,7 +132,6 @@ export const OfferDetailsWrapper = styled.section<{ open: boolean }>`
 	transition: all 0.4s ease-in-out;
 
 	${({ open }) => {
-		console.log(open)
 		return open
 			? css`
 					transform: scale(1);
@@ -145,8 +143,8 @@ export const OfferDetailsWrapper = styled.section<{ open: boolean }>`
 	
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
 		grid-template-columns: 1fr;
-  	grid-template-rows: 1fr 1fr;
-  	grid-template-areas: "content";
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas: "content";
 	}
 `
 
