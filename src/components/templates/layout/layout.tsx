@@ -4,8 +4,9 @@ import { theme } from 'theme/theme'
 import { GlobalStyles } from 'theme/global-styles'
 import { headerProps } from '../../../input/header.props'
 import { Header } from '../../header/header/header'
-import { headerSocialProps } from '../../../input/header-social.props'
-import { HeaderSocial } from '../../header/header-social/header-social'
+import { HeaderSocial } from 'components/header/header-social/header-social'
+import { headerSocialProps } from 'input/header-social.props'
+import { Footer } from 'components/footer/footer'
 
 const Layout: React.FC = ({ children }) => {
 	return (
@@ -15,6 +16,7 @@ const Layout: React.FC = ({ children }) => {
 				<HeaderSocial headerSocial={headerSocialProps} />
 				<Header header={headerProps} />
 				{children}
+				<Footer />
 			</section>
 		</ThemeProvider>
 	)

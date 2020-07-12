@@ -15,6 +15,8 @@ import { Partners } from 'components/partners/partners'
 import { partnersProps } from 'input/partners.props'
 import { Offer } from '../components/offer/offer'
 import { offerProps } from '../input/offer.props'
+import { HomeGallery } from 'components/home-gallery/home-gallery'
+import { homeGallertProps } from 'input/home-gallery.props'
 
 const IndexPage: React.FC = () => (
 	<Layout>
@@ -22,6 +24,7 @@ const IndexPage: React.FC = () => (
 		<Hero hero={heroProps} />
 		<HeroOffer heroOffer={heroOfferProps} />
 		<Partners partners={partnersProps} />
+		<HomeGallery gallery={homeGallertProps} />
 		<About about={aboutProps} />
 		<Offer offer={offerProps} />
 		<News news={newsProps} />
