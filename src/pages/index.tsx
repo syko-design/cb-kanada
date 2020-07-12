@@ -24,8 +24,8 @@ const IndexPage: React.FC<PathProps> = ({ path }) => (
 		<HeroOffer heroOffer={heroOfferProps} />
 		<About about={aboutProps} />
 		<Partners partners={partnersProps} />
-		<HomeGallery gallery={homeGallertProps} />
 		<Offer offer={offerProps} />
+		<HomeGallery gallery={homeGallertProps} />
 		<News news={newsProps} />
 	</Layout>
 )

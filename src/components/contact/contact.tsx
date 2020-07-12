@@ -11,7 +11,11 @@ import {
 	Input,
 	TextArea,
 	Label,
-	ErrorLabel
+	ErrorLabel,
+	CompanyDataWrapper,
+	CompanyDataItem,
+	DataHeader,
+	DataHeading
 } from './contact.styled'
 import { Heading3, Heading5 } from 'components/shared/heading/heading'
 import { Button } from 'components/shared/button/button'
@@ -31,6 +35,22 @@ export const Contact: React.FC<Props> = (props) => {
 					<Heading5>{props.contact.subHeader}</Heading5>
 				</Header>
 				<Content>{props.contact.content}</Content>
+				<CompanyDataWrapper>
+					<CompanyDataItem>
+						<DataHeader>
+							<DataHeading>Contact</DataHeading>
+						</DataHeader>
+						<p>phone: +48 543 542 134</p>
+						<p>email: example@gmail.com</p>
+					</CompanyDataItem>
+					<CompanyDataItem>
+						<DataHeader>
+							<DataHeading>Adress</DataHeading>
+						</DataHeader>
+						<p>3086 Pembina Hwy, Winnipeg,</p>
+						<p>MB R3T 2J2, Kanada</p>
+					</CompanyDataItem>
+				</CompanyDataWrapper>
 			</ColumnText>
 			<ColumnForm>
 				<Form onSubmit={handleSubmit<FormValues>(sendData)}>

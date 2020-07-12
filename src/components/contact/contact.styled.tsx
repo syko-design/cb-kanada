@@ -1,10 +1,13 @@
 import styled, { css, StyledProps, keyframes } from 'styled-components'
 import { ThemeProps } from '../../theme/theme.type'
+import { Heading3 } from 'components/shared/heading/heading'
 
 export const Wrapper = styled.section`
-	width: 100%;
+	width: 90%;
+	max-width: 1240px;
+	margin: auto;
 	height: auto;
-	padding: 3rem 10vw;
+	padding-bottom: 50px;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
@@ -36,6 +39,27 @@ export const ColumnText = styled.article`
 
 export const Content = styled.p``
 
+export const CompanyDataWrapper = styled.section`
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 50px;
+	margin: 50px 0 25px 0;
+
+	@media screen and (max-width: 600px) {
+		grid-template-columns: 1fr;
+		margin-bottom: 0;
+	}
+`
+
+export const CompanyDataItem = styled.article``
+
+export const DataHeader = styled.header``
+
+export const DataHeading = styled(Heading3)`
+	margin-bottom: 10px;
+	text-align: left !important;
+`
+
 export const ColumnForm = styled.article`
 	flex-grow: 1;
 	flex-basis: 0;
@@ -46,7 +70,6 @@ export const ColumnForm = styled.article`
 		max-width: 100%;
 		width: 100%;
 		margin-left: 0;
-		margin-top: 30px;
 	}
 `
 
@@ -54,6 +77,9 @@ export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
 	padding: 2rem 3rem;
+	@media screen and (max-width: 600px) {
+		padding: 2rem 0;
+	}
 `
 
 const shake = keyframes`

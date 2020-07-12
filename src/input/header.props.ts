@@ -4,7 +4,7 @@ export const headerProps: HeaderInput = {
 	navbar: {
 		items: [
 			{
-				name: 'Home',
+				name: 'Start',
 				link: '/',
 				selector: '#hero-section'
 			},
