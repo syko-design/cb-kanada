@@ -13,6 +13,7 @@ import { headerProps } from '../../../input/header.props'
 import { Header } from '../../header/header/header'
 import { HeaderSocial } from 'components/header/header-social/header-social'
 import { headerSocialProps } from 'input/header-social.props'
+import { Footer } from 'components/footer/footer'
 
 interface LayoutProps {
 	children: React.ReactNode
@@ -26,6 +27,7 @@ const Layout = ({ children }: LayoutProps) => {
 				<HeaderSocial headerSocial={headerSocialProps} />
 				<Header header={headerProps} />
 				{children}
+				<Footer />
 			</section>
 		</ThemeProvider>
 	)
