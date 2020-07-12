@@ -5,27 +5,33 @@ export const headerProps: HeaderInput = {
 		items: [
 			{
 				name: 'Home',
-				link: ''
+				link: '/',
+				selector: '#hero-section'
 			},
 			{
 				name: 'About',
-				link: ''
+				link: '/',
+				selector: '#about-section'
 			},
 			{
 				name: 'Offer',
-				link: ''
+				link: '/',
+				selector: '#offer-section'
 			},
 			{
 				name: 'Gallery',
-				link: ''
+				link: '/',
+				selector: '#gallery-section'
 			},
 			{
 				name: 'News',
-				link: ''
+				link: '/',
+				selector: '#news-section'
 			},
 			{
 				name: 'Contact',
-				link: ''
+				link: '/',
+				selector: '#contact-section'
 			}
 		]
 	}

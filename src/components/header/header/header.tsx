@@ -15,9 +15,10 @@ export interface HeaderInput {
 
 export interface HeaderProps {
 	header: HeaderInput
+	path: string
 }
 
-export const Header: React.FC<HeaderProps> = ({ header }) => {
+export const Header: React.FC<HeaderProps> = ({ header, path }) => {
 	const [openNavbar, setOpenNavbar] = useState(false)
 	const handleHamburgerClick = () => setOpenNavbar(!openNavbar)
 
@@ -26,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ header }) => {
 			<HeaderWrapper>
 				<Logo />
 				<HeaderNavbarWrapper open={openNavbar}>
-					<Navbar items={header.navbar.items} />
+					<Navbar items={header.navbar.items} path={path} />
 				</HeaderNavbarWrapper>
 				<HeaderHamburgerWrapper>
 					<Hamburger open={openNavbar} onClick={handleHamburgerClick} />

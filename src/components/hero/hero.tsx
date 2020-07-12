@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({
 	`)
 
 	return (
-		<HeroWrapper>
+		<HeroWrapper id="hero-section">
 			<HeroCoverImage
 				fluid={data.placeholderImage.childImageSharp.fluid}
 				alt="cover"

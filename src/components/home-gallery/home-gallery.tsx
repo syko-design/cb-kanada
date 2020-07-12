@@ -66,7 +66,7 @@ export const HomeGallery: React.FC<HomeGalleryProps> = ({ gallery }) => {
 	`)
 
 	return (
-		<HomeGalleryContainer>
+		<HomeGalleryContainer id="gallery-section">
 			<GalleryHeader>
 				<Heading3>{gallery.heading}</Heading3>
 				<Heading5>{gallery.subHeading}</Heading5>

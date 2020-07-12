@@ -17,15 +17,16 @@ import { Footer } from 'components/footer/footer'
 
 interface LayoutProps {
 	children: React.ReactNode
+	path: string
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, path }: LayoutProps) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
 			<section>
 				<HeaderSocial headerSocial={headerSocialProps} />
-				<Header header={headerProps} />
+				<Header header={headerProps} path={path} />
 				{children}
 				<Footer />
 			</section>
