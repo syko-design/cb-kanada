@@ -11,7 +11,7 @@ import { Footer } from 'components/footer/footer'
 interface LayoutProps {
 	children: React.ReactNode
 	path: string
-
+}
 
 const Layout = ({ children, path }: LayoutProps) => {
 	return (
