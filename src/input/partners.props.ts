@@ -14,5 +14,7 @@ export const partnersProps: PartnersType = {
 		{
 			logo: 'partners-logo/yawal-logo.png'
 		}
-	]
+	],
+	heading: 'Our partners',
+	subHeading: 'Sub heading for Our partners'
 }
