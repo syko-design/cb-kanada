@@ -21,11 +21,11 @@ export const HeaderNavbarWrapper = styled.section<HeaderNavbarWrapperProps>`
 
 	@media screen and (max-width: ${({ theme }: ThemeProps) => theme.media.mobileBp}) {
 		z-index: 10000;
-		width: 100vw;
+		width: calc(100vw + 20px);
 		height: 100vh;
 		position: fixed;
 		top: 0;
-		right: -100%;
+		right: calc(-100% - 40px);
 		transform: translateX(0);
 		transition: transform 0.3s;
 		will-change: transform;
