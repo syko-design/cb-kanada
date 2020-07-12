@@ -2,8 +2,13 @@ import React from 'react'
 import { FooterWrapper, LocalizationWrapper, CopyRightText, Map } from './footer.style'
 import { Contact } from 'components/contact/contact'
 import { contactProps } from 'input/contact.props'
+import { footerProps } from 'input/footer.props'
 
-export const Footer = () => (
+export interface FooterProps {
+	footer: typeof footerProps
+}
+
+export const Footer: React.FC<FooterProps> = ({ footer }) => (
 	<FooterWrapper>
 		<Contact contact={contactProps} />
 		<LocalizationWrapper>
@@ -13,6 +18,6 @@ export const Footer = () => (
 				aria-hidden="false"
 			></Map>
 		</LocalizationWrapper>
-		<CopyRightText>&copy; CB Canada 2020</CopyRightText>
+		<CopyRightText>&copy; {footer.copyRight}</CopyRightText>
 	</FooterWrapper>
 )
