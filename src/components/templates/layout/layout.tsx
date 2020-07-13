@@ -7,6 +7,7 @@ import { Header } from '../../header/header/header'
 import { HeaderSocial } from 'components/header/header-social/header-social'
 import { headerSocialProps } from 'input/header-social.props'
 import { Footer } from 'components/footer/footer'
+import { footerProps } from 'input/footer.props'
 
 interface LayoutProps {
 	children: React.ReactNode
@@ -21,7 +22,7 @@ const Layout = ({ children, path }: LayoutProps) => {
 				<HeaderSocial headerSocial={headerSocialProps} />
 				<Header header={headerProps} path={path} />
 				{children}
-				<Footer />
+				<Footer footer={footerProps} />
 			</section>
 		</ThemeProvider>
 	)

@@ -38,17 +38,17 @@ export const Contact: React.FC<Props> = (props) => {
 				<CompanyDataWrapper>
 					<CompanyDataItem>
 						<DataHeader>
-							<DataHeading>Contact</DataHeading>
+							<DataHeading>{props.contact.comapnyData.contact.header}</DataHeading>
 						</DataHeader>
-						<p>phone: +48 543 542 134</p>
-						<p>email: example@gmail.com</p>
+						<p>{props.contact.comapnyData.contact.phone}</p>
+						<p>{props.contact.comapnyData.contact.email}</p>
 					</CompanyDataItem>
 					<CompanyDataItem>
 						<DataHeader>
-							<DataHeading>Adress</DataHeading>
+							<DataHeading>{props.contact.comapnyData.address.header}</DataHeading>
 						</DataHeader>
-						<p>3086 Pembina Hwy, Winnipeg,</p>
-						<p>MB R3T 2J2, Kanada</p>
+						<p>{props.contact.comapnyData.address.first}</p>
+						<p>{props.contact.comapnyData.address.second}</p>
 					</CompanyDataItem>
 				</CompanyDataWrapper>
 			</ColumnText>
