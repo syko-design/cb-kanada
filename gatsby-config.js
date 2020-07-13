@@ -45,6 +45,7 @@ module.exports = {
 				// add your own characters to escape, replacing the default ':/'
 				specialChars: '/:'
 			}
-		}
+		},
+		`gatsby-plugin-use-query-params`
 	]
 }
