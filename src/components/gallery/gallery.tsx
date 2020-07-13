@@ -4,9 +4,11 @@ import {
 	ImagesWrapper,
 	FilterWrapper,
 	FilterItemList,
-	FilterItem
+	FilterItem,
+	ImageWrapper
 } from './gallery.style'
 import { galleryProps } from 'input/gallery.props'
+import { GalleryDynamicImage } from './gallery-dynamic-image'
 
 export interface GalleryProps {
 	gallery: typeof galleryProps
@@ -14,7 +16,20 @@ export interface GalleryProps {
 
 export const Gallery: React.FC<GalleryProps> = ({ gallery }) => {
 	const [filter, setFilter] = useState('All')
-	const handleSetFilter = (name: string) => setFilter(name)
+	const [filtered, setFiltred] = useState([...gallery.galleryImages])
+
+	const handleSetFilter = (name: string) => {
+		setFilter(name)
+		filterGallery(name)
+	}
+
+	const filterGallery = (filter: string) => {
+		const arr = gallery.galleryImages.filter(({ category }) =>
+			filter === 'All' ? true : category === filter
+		)
+
+		setFiltred(arr)
+	}
 
 	return (
 		<GalleryWrapper>
@@ -31,7 +46,13 @@ export const Gallery: React.FC<GalleryProps> = ({ gallery }) => {
 					))}
 				</FilterItemList>
 			</FilterWrapper>
-			<ImagesWrapper></ImagesWrapper>
+			<ImagesWrapper>
+				{filtered.map((image, i) => (
+					<ImageWrapper key={i} count={filtered.length}>
+						<GalleryDynamicImage fileName={image.path} alt="galery" />
+					</ImageWrapper>
+				))}
+			</ImagesWrapper>
 		</GalleryWrapper>
 	)
 }
