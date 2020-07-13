@@ -16,7 +16,7 @@ export const NavbarContainer = styled.nav`
 				justify-content: center;
 			}
 
-			${NavbarListLink} {
+			${NavbarListLink}, ${NavbarListTextAsLink} {
 				font-size: ${theme.fontSize.large};
 				color: ${theme.colors.light100};
 			}

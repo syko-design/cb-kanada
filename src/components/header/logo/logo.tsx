@@ -3,6 +3,6 @@ import { LogoWrapper, LogoImg } from './logo.style'
 
 export const Logo = () => (
 	<LogoWrapper>
-		<LogoImg src={'/logo.png'} alt="logo" />
+		<LogoImg src={'logo.png'} alt="logo" />
 	</LogoWrapper>
 )
