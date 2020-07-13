@@ -5,7 +5,9 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@types/body-scroll-lock": "^2.6.1",
     "babel-plugin-styled-components": "^1.10.7",
+    "body-scroll-lock": "^3.0.3",
     "gatsby": "^2.21.37",
     "gatsby-background-image": "^1.1.1",
     "gatsby-background-image-es5": "^1.1.1",

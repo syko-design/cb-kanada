@@ -1,23 +1,19 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import { DynamicImageProps } from './dynamic-image'
 
-export interface DynamicImageProps {
-	fileName: string
-	alt: string
-}
-
-export const DynamicImage: React.FC<DynamicImageProps> = ({ alt, fileName }) => (
+export const DynamicImageMax600: React.FC<DynamicImageProps> = ({ alt, fileName }) => (
 	<StaticQuery
 		query={graphql`
-			query DynamicImageMax1280 {
+			query DynamicImageMax600 {
 				images: allFile {
 					edges {
 						node {
 							relativePath
 							name
 							childImageSharp {
-								fluid(maxWidth: 1280) {
+								fluid(maxWidth: 600) {
 									...GatsbyImageSharpFluid
 								}
 							}

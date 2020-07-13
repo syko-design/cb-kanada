@@ -16,8 +16,8 @@ export const Offer: React.FC<Props> = (props) => {
 				<Heading5>{props.offer.subHeader}</Heading5>
 			</Header>
 			<OfferWrapper>
-				{props.offer.services.map((service) => (
-					<OfferItem {...service} key={service.title} />
+				{props.offer.services.map((service, index) => (
+					<OfferItem offer={service} index={index} key={service.title} />
 				))}
 			</OfferWrapper>
 		</Wrapper>
