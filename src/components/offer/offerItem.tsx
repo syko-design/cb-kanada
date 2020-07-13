@@ -24,13 +24,17 @@ export const OfferItem: React.FC<Props> = (props) => {
 	const handleOpen = () => {
 		const targetElement = ref.current
 		setOpen(true)
-		disableBodyScroll(targetElement)
+		if (targetElement) {
+			disableBodyScroll(targetElement)
+		}
 	}
 	const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
 		const targetElement = ref.current
 		e.stopPropagation()
 		setOpen(false)
-		enableBodyScroll(targetElement)
+		if (targetElement) {
+			enableBodyScroll(targetElement)
+		}
 	}
 
 	React.useEffect(() => () => clearAllBodyScrollLocks())
