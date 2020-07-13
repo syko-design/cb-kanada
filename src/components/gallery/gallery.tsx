@@ -32,9 +32,10 @@ export const Gallery: React.FC<GalleryProps> = ({ gallery }) => {
 
 		setFiltred(arr)
 	}
+
 	useEffect(() => {
 		if (queryFilter) {
-			filterGallery(queryFilter)
+			handleSetFilter(queryFilter)
 		}
 	}, [])
 
