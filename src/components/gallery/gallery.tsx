@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
 	GalleryWrapper,
 	ImagesWrapper,
@@ -9,6 +9,7 @@ import {
 } from './gallery.style'
 import { galleryProps } from 'input/gallery.props'
 import { GalleryDynamicImage } from './gallery-dynamic-image'
+import { useQueryParam, StringParam } from 'use-query-params'
 
 export interface GalleryProps {
 	gallery: typeof galleryProps
@@ -17,6 +18,7 @@ export interface GalleryProps {
 export const Gallery: React.FC<GalleryProps> = ({ gallery }) => {
 	const [filter, setFilter] = useState('All')
 	const [filtered, setFiltred] = useState([...gallery.galleryImages])
+	const [queryFilter] = useQueryParam('filter', StringParam)
 
 	const handleSetFilter = (name: string) => {
 		setFilter(name)
@@ -30,6 +32,11 @@ export const Gallery: React.FC<GalleryProps> = ({ gallery }) => {
 
 		setFiltred(arr)
 	}
+	useEffect(() => {
+		if (queryFilter) {
+			filterGallery(queryFilter)
+		}
+	}, [])
 
 	return (
 		<GalleryWrapper>
