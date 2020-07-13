@@ -1,13 +1,13 @@
-import styled, { css, FlattenSimpleInterpolation, StyledProps } from 'styled-components'
-import Img from 'gatsby-image'
+import styled, { css, StyledProps } from 'styled-components'
 import { ThemeProps } from '../../theme/theme.type'
 
 export const Wrapper = styled.section`
 	width: 100%;
 	height: auto;
-	padding: 3rem 10vw;
+	padding: 3rem 0;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 `
 
 export const Header = styled.header`
@@ -16,21 +16,27 @@ export const Header = styled.header`
 	text-align: center;
 `
 
-export const OfferWrapper = styled.article`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+export const OfferWrapper = styled.section`
+	display: grid;
+	grid-template-columns: 2fr;
+	grid-auto-rows: 1fr;
+	max-width: 1240px;
 `
 
 export const OfferItemWrapper = styled.article`
 	position: relative;
 	width: 100%;
-	max-width: 1000px;
-	margin-top: 48px;
+	height: 100%;
 	display: flex;
 	background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light300};
+	color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.secondary100};
 	transition: all 0.1s linear;
+
+	:nth-child(even) {
+		background-color: ${(props: StyledProps<ThemeProps>): string =>
+			props.theme.colors.secondary100};
+		color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light300};
+	}
 
 	:nth-child(even) {
 		flex-direction: row-reverse;
@@ -38,25 +44,6 @@ export const OfferItemWrapper = styled.article`
 
 	:first-of-type {
 		margin-top: 0;
-	}
-
-	:before {
-		content: '';
-		z-index: -1;
-		position: absolute;
-		left: -8px;
-		top: 8px;
-		width: 100%;
-		height: 100%;
-		will-change: transform;
-		transition: all 0.1s linear;
-		${({ theme }: ThemeProps): FlattenSimpleInterpolation => css`
-			background-color: ${theme.colors.primary100};
-		`}
-	}
-
-	:hover:before {
-		transform: translate(16px, -16px);
 	}
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
@@ -69,32 +56,37 @@ export const OfferItemWrapper = styled.article`
 `
 
 export const OfferItemImage = styled.section`
-	width: 100%;
-	max-width: 300px;
+	position: relative;
+	flex-grow: 1;
+	flex-basis: 0;
+	height: 100%;
+
+	.gatsby-image-wrapper {
+		height: 100%;
+	}
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
 		width: 100%;
 		max-width: 100%;
 		flex-basis: 100%;
-	}
-`
-
-export const Image = styled(Img)`
-	position: relative;
-	max-width: 300px;
-	width: 100%;
-	display: block;
-
-	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
-		max-width: 100%;
 	}
 `
 
 export const OfferItemContent = styled.section`
-	padding: 16px 32px;
+	flex-grow: 1;
+	flex-basis: 0;
 	display: flex;
 	flex-wrap: wrap;
-	background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light300};
+
+	section {
+		display: flex;
+		flex-direction: column;
+		padding: 3vh 32px;
+	}
+
+	section button {
+		margin-top: 16px;
+	}
 
 	@media (max-width: ${(props: StyledProps<ThemeProps>): string => props.theme.media.mobileBp}) {
 		width: 100%;
@@ -103,13 +95,33 @@ export const OfferItemContent = styled.section`
 	}
 `
 
+export const OfferItemSubServiceList = styled.ul`
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	width: 100%;
+	margin-top: auto;
+	margin-bottom: auto;
+`
+
+export const OfferItemSubServiceItem = styled.li`
+	width: 100%;
+	border-bottom: 1px solid currentColor;
+	line-height: 300%;
+
+	:before {
+		content: '\\2192';
+		margin-right: 8px;
+		color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.primary100};
+	}
+`
+
 export const OfferItemContentHeader = styled.h6`
-	flex-basis: 100%;
 	text-transform: uppercase;
 	font-weight: 600;
 	margin-bottom: 12px;
-	font-size: 18px;
-	color: #222;
+	font-size: 32px;
+	color: inherit;
 	transition: all 0.1s ease-in-out;
 	margin-top: 0;
 `
@@ -125,6 +137,7 @@ export const OfferDetailsWrapper = styled.section<{ open: boolean }>`
 	min-height: 100vh;
 	height: auto;
 	background-color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.light100};
+	color: ${(props: StyledProps<ThemeProps>): string => props.theme.colors.secondary100};
 	top: 0;
 	left: 0;
 	z-index: 20001;
@@ -134,10 +147,11 @@ export const OfferDetailsWrapper = styled.section<{ open: boolean }>`
 	${({ open }) => {
 		return open
 			? css`
-					transform: scale(1);
+					opacity: 1;
 			  `
 			: css`
-					transform: scale(0);
+					opacity: 0;
+					z-index: -1;
 			  `
 	}}
 	
@@ -220,12 +234,15 @@ export const OfferDetailsContent = styled.section`
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: flex-start;
+
 	p {
 		${({ theme }: ThemeProps) => css`
 			font-size: ${theme.fontSize.large};
 		`}
 	}
 `
+
+export const OfferDetailsContentText = styled.section``
 
 export const OfferDetailsImage = styled.section`
 	position: relative;
