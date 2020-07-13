@@ -12,7 +12,7 @@ import {
 } from './home-gallery.style'
 import { Heading3, Heading5 } from 'components/shared/heading/heading'
 import { Button } from 'components/shared/button/button'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import { GalleryArticle, GalleryArticleItem } from './gallery-article'
 
 export interface HomeGalleryType {
@@ -102,7 +102,9 @@ export const HomeGallery: React.FC<HomeGalleryProps> = ({ gallery }) => {
 				</GalleryImageWrapper4>
 			</HomeGalleryWrapper>
 			<GalleryFooter>
-				<Button>{gallery.buttonValue}</Button>
+				<Link to="/gallery">
+					<Button>{gallery.buttonValue}</Button>
+				</Link>
 			</GalleryFooter>
 		</HomeGalleryContainer>
 	)
